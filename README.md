@@ -47,7 +47,70 @@ images/
 bookshare_db.sql
 README.md
 ```
+---
 
+# 📸 Screenshots
+
+## Login Page
+
+![Login](images/login.png)
+
+
+## Dashboard
+
+![Dashboard](images/deshboard.png)
+
+
+## Dashboard (Admin)
+
+![Dashboard Admin](images/deshboard2.png)
+
+
+
+## Add Book
+
+![Add Book](images/addbook.png)
+
+---
+
+## Manage Books
+
+![Manage Books](images/managebook.png)
+
+
+
+## Borrow Books
+
+![Borrow Books](images/borrow.png)
+
+---
+
+## My Books
+
+![My Books](images/mybook.png)
+
+
+## My Requests
+
+![My Requests](images/myrequest.png)
+
+
+
+## Reviews
+
+![Reviews](images/review.png)
+
+
+
+## Admin Borrow Requests
+
+![Admin Borrow Requests](images/adminborrowrequest.png)
+
+
+
+
+
+GitHub: https://github.com/arpita201
 ## Author
 
 **Arpita Saha**
