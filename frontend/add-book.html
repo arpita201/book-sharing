@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Add Book</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Add New Book</h1>
+
+<div class="center-box">
+    <form action="../backend/addBook.php" method="POST" enctype="multipart/form-data">
+        <input type="text" name="title" placeholder="Book Title" required>
+
+        <input type="text" name="author" placeholder="Author Name" required>
+
+        <textarea name="description" placeholder="Description"></textarea>
+
+        <input type="file" name="image" accept="image/*">
+
+        <button type="submit">Add Book</button>
+    </form>
+
+    <div class="back-btn">
+        <a href="dashboard.html" class="btn">Back to Dashboard</a>
+    </div>
+</div>
+
+</body>
+</html>

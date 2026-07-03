@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage Books</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Manage Books</h1>
+
+<div id="bookList"></div>
+
+<div class="back-btn">
+    <a href="dashboard.html" class="backBtn">Back to Dashboard</a>
+</div>
+
+<script>
+fetch("../backend/getBooks.php")
+.then(res=>res.json())
+.then(data=>{
+
+let html="";
+
+data.forEach(book=>{
+
+html+=`
+<div class="book-item">
+
+<img src="../images/${book.image}" width="120"><br><br>
+
+<b>${book.title}</b><br>
+${book.author}<br><br>
+
+<a class="btn" href="edit-book.html?id=${book.id}">Edit</a>
+
+<a class="btn reject-btn"
+href="../backend/deleteBook.php?id=${book.id}"
+onclick="return confirm('Delete this book?')">
+Delete
+</a>
+
+</div>
+`;
+
+});
+
+document.getElementById("bookList").innerHTML=html;
+
+});
+</script>
+
+</body>
+</html>

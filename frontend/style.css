@@ -1,0 +1,464 @@
+/* ===========================
+   GLOBAL BACKGROUND + FONT
+=========================== */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url('books.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #000;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(255,255,255,0.60); 
+    z-index: -1;
+}
+
+/* ===========================
+       HOME PAGE CENTERED
+=========================== */
+.home-container {
+    text-align: center;
+    margin-top: 140px;
+}
+
+.home-container h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.home-container h2 {
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+
+/* Login & Signup Buttons */
+.home-buttons .btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 30px;
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    background: #0033cc;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.home-buttons .btn:hover {
+    background: #001f80;
+}
+
+/* ===========================
+            TITLES
+=========================== */
+h1, h2 {
+    text-align: center;
+    font-weight: bold;
+}
+
+/* ===========================
+        CENTER BOX (Forms)
+=========================== */
+.center-box {
+    width: 50%;
+    margin: 30px auto;
+    padding: 25px;
+    background: rgba(255,255,255,0.85);
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 0 10px gray;
+}
+
+/* ===========================
+        DASHBOARD MENU
+=========================== */
+.dashboard-menu {
+    width: 40%;
+    margin: 30px auto;
+    padding: 20px;
+    background: rgba(255,255,255,0.90);
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 0 10px #aaa;
+}
+
+.dashboard-menu a {
+    display: block;      
+    margin: 12px 0;
+    padding: 12px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #003399;
+    text-decoration: none;
+    background: rgba(255,255,255,0.7);
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.dashboard-menu a:hover {
+    background: #003399;
+    color: white;
+}
+
+/* ===========================
+        FORM INPUT FIELDS
+=========================== */
+input, textarea {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #666;
+    font-size: 18px;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: none;
+    background: #0033cc;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #002080;
+}
+
+/* ===========================
+        BOOK ITEM BOXES
+=========================== */
+.book-item {
+    width: 60%;
+    margin: 10px auto;
+    padding: 15px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 10px;
+    font-size: 20px;
+    box-shadow: 0 0 5px #999;
+}
+/* FORM BOX INPUT FIXED */
+.form-box input {
+    width: 80%;               /* ছোট সাইজ */
+    padding: 12px;
+    margin: 10px auto;
+    display: block;
+    font-size: 18px;
+    border-radius: 8px;
+    border: 1px solid #666;
+}
+
+/* BUTTON CENTER FIX */
+.form-box button {
+    width: 40%;
+    padding: 12px;
+    font-size: 20px;
+    margin: 15px auto;
+    display: block;
+    border-radius: 8px;
+    background: #0033cc;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.form-box button:hover {
+    background: #002080;
+}
+
+/* TEXT CENTER FIX */
+.form-box p {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.form-box a {
+    color: #0033cc;
+    font-weight: bold;
+}
+/* REVIEW BOX DESIGN */
+.review-box {
+    width: 60%;
+    margin: 20px auto;
+}
+
+.review-item {
+    background: rgba(255,255,255,0.9);
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #999;
+    font-size: 18px;
+}
+/* Dropdown + Textarea for Review */
+#bookSelect, #reviewText {
+    width: 90%;
+    padding: 12px;
+    margin: 10px auto;
+    display: block;
+    font-size: 18px;
+    border-radius: 8px;
+    border: 1px solid #666;
+}
+
+#reviewText {
+    height: 120px;
+    resize: none;
+}
+
+/* Display review item box */
+.review-item {
+    width: 60%;
+    margin: 10px auto;
+    background: rgba(255,255,255,0.9);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #999;
+    font-size: 18px;
+}
+/* Back to Dashboard Button */
+.back-btn {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.back-btn a {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 20px;
+    background: #0033cc;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.back-btn a:hover {
+    background: #001f80;
+}
+.back-btn {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.back-btn a {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 20px;
+    background: #0033cc;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.back-btn a:hover {
+    background: #001f80;
+}
+/* Back to Dashboard Button */
+.back-btn {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.back-btn a {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 20px;
+    font-weight: bold;
+    background: #0033cc;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.back-btn a:hover {
+    background: #001f80;
+}
+
+.back-btn {
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.back-btn-link {
+    background: #0052ff;
+    color: white;
+    padding: 12px 40px;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 12px;
+    display: inline-block;
+    transition: 0.2s ease;
+}
+
+.back-btn-link:hover {
+    background: #003cc7;
+}
+.back-btn {
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.back-btn-link {
+    background: #0052ff;
+    color: white;
+    padding: 12px 40px;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 12px;
+    display: inline-block;
+    transition: 0.2s ease;
+}
+
+.back-btn-link:hover {
+    background: #003cc7;
+}
+.action-buttons{
+    margin-top:15px;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+}
+
+.approve-btn{
+    background:#16a34a;
+    color:white;
+    padding:10px 18px;
+    border-radius:8px;
+    text-decoration:none;
+}
+
+.reject-btn{
+    background:#dc2626;
+    color:white;
+    padding:10px 18px;
+    border-radius:8px;
+    text-decoration:none;
+}
+.search-box {
+    width: 60%;
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin: 20px auto;
+    display: block;
+}
+.stats{
+display:flex;
+justify-content:center;
+gap:25px;
+margin:30px;
+flex-wrap:wrap;
+}
+
+.card{
+background:white;
+padding:25px;
+width:200px;
+border-radius:12px;
+box-shadow:0 0 10px rgba(0,0,0,.15);
+text-align:center;
+}
+
+.card h2{
+font-size:35px;
+color:#6C63FF;
+margin-bottom:10px;
+}
+.book-card{
+
+background:white;
+
+width:260px;
+
+padding:20px;
+
+margin:20px;
+
+display:inline-block;
+
+border-radius:12px;
+
+box-shadow:0 0 10px rgba(0,0,0,.2);
+
+text-align:center;
+
+vertical-align:top;
+
+}
+
+.book-cover{
+
+width:180px;
+
+height:250px;
+
+object-fit:cover;
+
+border-radius:8px;
+
+margin-bottom:15px;
+
+}
+
+.book-card h3{
+
+margin:10px 0;
+
+}
+
+.book-card p{
+
+color:#555;
+
+margin-bottom:15px;
+
+}.book-card .btn{
+  display:inline-block;
+  margin-top:10px;
+  text-decoration:none;
+  color:white;
+  background:#003bd1;
+  padding:10px 18px;
+  border-radius:8px;
+  font-weight:bold;
+}.back-btn{
+    text-align:center;
+    margin:40px 0;
+}
+
+.back-btn .btn,
+.backBtn{
+    display:inline-block;
+    background:#0a3dff;
+    color:#fff;
+    padding:14px 35px;
+    font-size:22px;
+    font-weight:bold;
+    text-decoration:none;
+    border-radius:10px;
+    border:none;
+    transition:0.3s;
+}
+
+.back-btn .btn:hover,
+.backBtn:hover{
+    background:#002bbd;
+}
+/* css updated */

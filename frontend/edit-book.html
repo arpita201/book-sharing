@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Edit Book</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>Edit Book</h1>
+
+<form action="../backend/updateBook.php" method="POST">
+
+<input type="hidden" name="id" id="id">
+
+<input
+type="text"
+name="title"
+id="title"
+placeholder="Book Title"
+required>
+
+<input
+type="text"
+name="author"
+id="author"
+placeholder="Author"
+required>
+
+<button>Update Book</button>
+
+</form>
+
+<script>
+
+const id=new URLSearchParams(window.location.search).get("id");
+
+fetch("../backend/getBooks.php")
+
+.then(r=>r.json())
+
+.then(data=>{
+
+const book=data.find(x=>x.id==id);
+
+document.getElementById("id").value=book.id;
+document.getElementById("title").value=book.title;
+document.getElementById("author").value=book.author;
+
+});
+
+</script>
+
+</body>
+</html>

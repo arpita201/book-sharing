@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Reviews</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+.pageBox {
+    width: 60%;
+    margin: 30px auto;
+    padding: 25px;
+    background: rgba(255,255,255,0.8);
+    border-radius: 15px;
+    text-align: center;
+}
+
+input, textarea {
+    width: 90%;
+    margin: 10px auto;
+    padding: 12px;
+    border: 1px solid #aaa;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+button {
+    background: #0047FF;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-top: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+}
+
+.reviewBox {
+    background: white;
+    padding: 12px;
+    border-radius: 10px;
+    text-align: left;
+    margin: 10px auto;
+    width: 90%;
+    border-left: 5px solid #0047FF;
+}
+
+.backBtn {
+    background: #0047FF;
+    color: white;
+    padding: 12px 25px;
+    font-size: 20px;
+    display: inline-block;
+    margin-top: 25px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+<!-- review page updated -->
+
+<h1 class="title">Reviews</h1>
+
+<div class="pageBox">
+    <form id="reviewForm">
+        <input type="text" id="bookName" placeholder="Book Name">
+        <textarea id="reviewText" rows="4" placeholder="Write your review..."></textarea>
+        <button type="submit">Submit Review</button>
+    </form>
+</div>
+
+<h2 style="text-align:center; margin-top:40px;">All Reviews</h2>
+
+<div class="pageBox" id="allReviews">
+    Loading reviews...
+</div>
+
+<div style="text-align:center;">
+    <a class="backBtn" href="dashboard.html">Back to Dashboard</a>
+</div>
+
+
+<script>
+document.getElementById("reviewForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    let bookName = document.getElementById("bookName").value.trim();
+    let review = document.getElementById("reviewText").value.trim();
+
+    if (bookName === "" || review === "") {
+        alert("Book name & review cannot be empty!");
+        return;
+    }
+
+    let formData = new FormData();
+    formData.append("book_name", bookName);
+    formData.append("review", review);
+
+    fetch("../backend/addReview.php", {
+        method: "POST",
+        body: formData
+    })
+    .then(res => res.text())
+    .then(data => {
+        if (data.trim() === "success") {
+            alert("Review Submitted!");
+            document.getElementById("bookText").value = "";
+            document.getElementById("bookName").value = "";
+            document.getElementById("reviewText").value = "";
+            loadReviews();
+        } else {
+            alert("Error submitting review.");
+        }
+    });
+});
+
+function loadReviews() {
+
+    fetch("../backend/getReviews.php")
+    .then(res => res.json())
+    .then(list => {
+
+        let output = "";
+
+        list.forEach(r => {
+            output += `
+                <div class="reviewBox">
+                    <b>Book:</b> ${r.book_name}<br>
+                    <b>Review:</b> ${r.review}<br>
+                    <small>${r.created_at}</small>
+                </div>
+            `;
+        });
+
+        document.getElementById("allReviews").innerHTML = output || "No reviews yet.";
+    });
+}
+
+window.onload = loadReviews;
+
+
+</script>
+
+</body>
+</html>
