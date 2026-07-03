@@ -1,30 +1,53 @@
-Book Sharing System
+# 📚 Book Sharing System
 
-A web-based Book Sharing System developed using PHP, MySQL, HTML, CSS, and JavaScript.
+A web-based Book Sharing System developed using PHP, MySQL, HTML, CSS and JavaScript.
 
-Features
-- User Authentication
+## Features
+
+- User Registration & Login
 - Dashboard
-- Add Book
-- Upload Book Image
+- Add New Books
+- Upload Book Images
 - Search Books
 - Borrow Books
 - My Books
 - My Requests
 - Book Reviews
-- Profile
-- Edit/Delete Books
+- User Profile
+- Edit & Delete Books
+- Admin Request Management
 
-Technologies
+## Technologies Used
+
+- PHP
+- MySQL
 - HTML5
 - CSS3
 - JavaScript
-- PHP
-- MySQL
 - XAMPP
 
-How to Run
-1. Clone repository
-2. Import bookshare_db.sql
-3. Start Apache & MySQL
-4. Open localhost/book-sharing
+## Installation
+
+1. Clone this repository.
+2. Copy the project into XAMPP `htdocs`.
+3. Import `bookshare_db.sql` into phpMyAdmin.
+4. Start Apache and MySQL.
+5. Open:
+
+```
+http://localhost/book-sharing/frontend/
+```
+
+## Project Structure
+
+```
+backend/
+frontend/
+images/
+bookshare_db.sql
+README.md
+```
+
+## Author
+
+**Arpita Saha**
